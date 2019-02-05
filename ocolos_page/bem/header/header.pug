@@ -1,0 +1,13 @@
+-
+	let blockNameHeader = "header";
+
+mixin header
+	header(class=blockNameHeader)
+		div(class=blockNameHeader+"_logo") 
+			img(src="img/logo.png", alt="")
+		div(class=blockNameHeader+"_menu")
+			div(class=blockNameHeader+"_right") 
+				img(src="img/Cart.svg", alt="", class=blockNameHeader+"_menu-item")
+				img(src="img/User.svg", alt="", class=blockNameHeader+"_menu-item")
+				img(src="img/Search.svg", alt="", class=blockNameHeader+"_menu-item")
+			div(class=blockNameHeader+"_bar") burgerbar

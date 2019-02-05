@@ -1,0 +1,10 @@
+-
+	let blockNameContact = "contact";
+
+mixin contact(title, dataContact)
+	div(class=blockNameContact class="col-4") 
+		h1(class=blockNameContact+"_title")= title
+		div(class=blockNameContact+"_data-contact")= dataContact.address
+		div(class=blockNameContact+"_data-contact")= dataContact.city
+		div(class=blockNameContact+"_data-contact" class=blockNameContact+"_data-contact__indent-top")= dataContact.email
+		div(class=blockNameContact+"_data-contact")= dataContact.phone

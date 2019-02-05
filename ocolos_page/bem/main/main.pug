@@ -1,0 +1,27 @@
+include ../contact/contact.pug
+include ../entry-field/entry-field.pug
+
+-
+	let blockNameMain = "main";
+
+mixin main
+	main(class=blockNameMain)
+		div(class=blockNameMain+"_map" class="_map")
+		section(class=blockNameMain+"_contacts")
+			h3(class=blockNameMain+"_title") contact
+			h1(class=blockNameMain+"_subtitle") keep in touch with us
+			div(class=blockNameMain+"_btstrp-container" class="container")
+				div(class=blockNameMain+"_btstrp-row" class="row")
+					+contact("international", {address: "98 West 21th Street, Suite 721", city: "New York NY 10010", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
+					+contact("Customer Service", {address: "Pier 28 Annex The Embarcadero", city: "San Francisco, CA 94105", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
+					+contact("PRESS", {address: "3480 Industrial Blvd, Suite 100, ", city: "West Sacramento, CA 95691", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
+		form(class=blockNameMain+"_from") 
+			div(class=blockNameMain+"_btstrp-container" class="container")
+				div(class=blockNameMain+"_btstrp-row" class="row")
+					+entryField('your name', 4)
+					+entryField('your email', 4)
+					+entryField('your phone', 4)
+				div(class=blockNameMain+"_btstrp-row" class="row")
+					+entryField('your message', 12)
+			.main_button
+				button.button(class='button__main-contact-submit', type='submit') submit now
