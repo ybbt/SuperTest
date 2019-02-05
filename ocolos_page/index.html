@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en"></html>
-<head>
-  <meta charset="UTF-8">
-  <title>Contact</title>
-  <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap-grid.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?callback=loadMap" async defer></script>
-</head>
-<body>
-  <header class="header">
-    <div class="header_logo"> <img src="img/logo.png" alt=""/></div>
-    <div class="header_menu">
-      <div class="header_right"> <img class="header_menu-item" src="img/Cart.svg" alt=""/><img class="header_menu-item" src="img/User.svg" alt=""/><img class="header_menu-item" src="img/Search.svg" alt=""/></div>
-      <div class="header_bar"><img class="header_burger-line" src="img/Line-1.svg" alt=""/><img class="header_burger-line" src="img/Line-2.svg" alt=""/><img class="header_burger-line" src="img/Line-3.svg" alt=""/></div>
-    </div>
-  </header>
+
+<!--include bem/header/header.pug-->
+<!--include bem/main/main.pug-->
+<!--include bem/footer/footer.pug--><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=loadMap" async defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_logo"> <img src="img/logo.png" alt=""></div>
+      <div class="header_menu">
+        <div class="header_right"> <img class="header_menu-item" src="img/Cart.svg" alt=""><img class="header_menu-item" src="img/User.svg" alt=""><img class="header_menu-item" src="img/Search.svg" alt=""></div>
+        <div class="header_bar"><img class="header_burger-line" src="img/Line-1.svg" alt=""><img class="header_burger-line" src="img/Line-2.svg" alt=""><img class="header_burger-line" src="img/Line-3.svg" alt=""></div>
+      </div>
+    </header>
+  </body>
   <main class="main">
     <div class="main_map _map"></div>
     <section class="main_contacts">
@@ -79,4 +83,4 @@
     <div class="footer_allrights">© 2018 Ocolus. All Rights Reserved</div>
   </footer>
   <script src="js/script.js"></script>
-</body>
+</html>

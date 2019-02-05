@@ -1,24 +1,75 @@
-include bem/header/header.pug
-include bem/main/main.pug
-include bem/footer/footer.pug
+//include bem/header/header.pug
+//include bem/main/main.pug
+//include bem/footer/footer.pug
+mixin contact(title, dataContact)
+	div(class="contact" class="col-4") 
+		h1(class="contact"+"_title")= title
+		div(class="contact"+"_data-contact")= dataContact.address
+		div(class="contact"+"_data-contact")= dataContact.city
+		div(class="contact"+"_data-contact" class="contact"+"_data-contact__indent-top")= dataContact.email
+		div(class="contact"+"_data-contact")= dataContact.phone
+
+mixin entryField(labelText, quantityCol)
+	div(class="entry-field col-" + quantityCol)
+		input(type='text' placeholder=labelText).entry-field_input
 
 doctype html
 html(lang='en')
-head
-	meta(charset='UTF-8')
-	title Contact
-	link(rel="icon" type="image/png" href="favicon.png" sizes="16x16")
-		
-	link(rel= "stylesheet" href="css/normalize.css")
-	link(rel= "stylesheet" href="css/style.css")
+	head
+		meta(charset='UTF-8')
+		title Contact
+		link(rel="icon" type="image/png" href="favicon.png" sizes="16x16")
+			
+		link(rel= "stylesheet" href="css/normalize.css")
+		link(rel= "stylesheet" href="css/style.css")
 
-	link(rel= "stylesheet" href="css/bootstrap-grid.css")
+		link(rel= "stylesheet" href="css/bootstrap-grid.css")
 
-	script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
 
-	script(src="https://maps.googleapis.com/maps/api/js?callback=loadMap" async defer)
-body
-	+header
-	+main
-	+footer
+		script(src="https://maps.googleapis.com/maps/api/js?callback=loadMap" async defer)
+	body
+		header(class="header")
+			div(class="header"+"_logo") 
+				img(src="img/logo.png", alt="")
+			div(class="header"+"_menu")
+				div(class="header"+"_right") 
+					img(src="img/Cart.svg", alt="", class="header"+"_menu-item")
+					img(src="img/User.svg", alt="", class="header"+"_menu-item")
+					img(src="img/Search.svg", alt="", class="header"+"_menu-item")
+				div(class="header"+"_bar")
+					img(src="img/Line-1.svg", alt="", class="header"+ "_burger-line")
+					img(src="img/Line-2.svg", alt="", class="header"+ "_burger-line")
+					img(src="img/Line-3.svg", alt="", class="header"+ "_burger-line")
+	main(class="main")
+		div(class="main"+"_map" class="_map")
+		section(class="main"+"_contacts")
+			h3(class="main"+"_title") contact
+			h1(class="main"+"_subtitle") keep in touch with us
+			div(class="main"+"_btstrp-container" class="container")
+				div(class="main"+"_btstrp-row" class="row")
+					+contact("international", {address: "98 West 21th Street, Suite 721", city: "New York NY 10010", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
+					+contact("Customer Service", {address: "Pier 28 Annex The Embarcadero", city: "San Francisco, CA 94105", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
+					+contact("PRESS", {address: "3480 Industrial Blvd, Suite 100, ", city: "West Sacramento, CA 95691", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
+		form(class="main"+"_from") 
+			div(class="main"+"_btstrp-container" class="container")
+				div(class="main"+"_btstrp-row" class="row")
+					+entryField('your name', 4)
+					+entryField('your email', 4)
+					+entryField('your phone', 4)
+				div(class="main"+"_btstrp-row" class="row")
+					+entryField('your message', 12)
+			.main_button
+				button.button(class='button__main-contact-submit', type='submit') submit now
+	footer(class="footer") 
+		div(class="footer" + "_social")
+			a(href="#", class="footer" + "_social-item") facebook
+			a(href="#", class="footer" + "_social-item") google
+			a(href="#", class="footer" + "_social-item") instagramm
+		div(class="footer" + "_menu")
+			a(href="#", class="footer" + "_menu-item") policy
+			a(href="#", class="footer" + "_menu-item") faq
+			a(href="#", class="footer" + "_menu-item") terms
+			a(href="#", class="footer" + "_menu-item") support
+		div(class="footer" + "_allrights") © 2018 Ocolus. All Rights Reserved
 	script(src="js/script.js")

@@ -150,6 +150,7 @@
 }
 .footer_menu {
   width: 420px;
+  min-width: 420px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
