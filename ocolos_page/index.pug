@@ -1,13 +1,48 @@
 //include bem/header/header.pug
 //include bem/main/main.pug
 //include bem/footer/footer.pug
-mixin contact(title, dataContact)
-	div(class="contact" class="col-4") 
-		h1(class="contact"+"_title")= title
-		div(class="contact"+"_data-contact")= dataContact.address
-		div(class="contact"+"_data-contact")= dataContact.city
-		div(class="contact"+"_data-contact" class="contact"+"_data-contact__indent-top")= dataContact.email
-		div(class="contact"+"_data-contact")= dataContact.phone
+
+-
+	var _dataContact = [
+		{
+			title: "international",
+			contacts: {
+						address: "98 West 21th Street, Suite 721", 
+						city: "New York NY 10010", 
+						email: "Email: info@octopus.com", 
+						phone: "Phone: +88 (0) 101 0000 000",
+					}
+		},
+		{
+			title: "Customer Service",
+			contacts: {
+						address: "Pier 28 Annex The Embarcadero",
+						 city: "San Francisco, CA 94105", 
+						 email: "Email: info@octopus.com", 
+						 phone: "Phone: +88 (0) 101 0000 000",
+					}
+		},
+		{
+			title: "PRESS",
+			contacts: {
+						address: "3480 Industrial Blvd, Suite 100, ", 
+						city: "West Sacramento, CA 95691", 
+						email: "Email: info@octopus.com", 
+						phone: "Phone: +88 (0) 101 0000 000",
+					}
+		},
+	]
+
+
+
+mixin contact(contacts)
+	each dataContact in contacts
+		div(class="contact" class="col-4") 
+			h1(class="contact"+"_title")= dataContact.title
+			div(class="contact"+"_data-contact")= dataContact.contacts.address
+			div(class="contact"+"_data-contact")= dataContact.contacts.city
+			div(class="contact"+"_data-contact" class="contact"+"_data-contact__indent-top")= dataContact.contacts.email
+			div(class="contact"+"_data-contact")= dataContact.contacts.phone
 
 mixin entryField(labelText, quantityCol)
 	div(class="entry-field col-" + quantityCol)
@@ -52,9 +87,7 @@ html(lang='en')
 			h1(class="main"+"_subtitle") keep in touch with us
 			div(class="main"+"_btstrp-container" class="container")
 				div(class="main"+"_btstrp-row" class="row")
-					+contact("international", {address: "98 West 21th Street, Suite 721", city: "New York NY 10010", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
-					+contact("Customer Service", {address: "Pier 28 Annex The Embarcadero", city: "San Francisco, CA 94105", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
-					+contact("PRESS", {address: "3480 Industrial Blvd, Suite 100, ", city: "West Sacramento, CA 95691", email: "Email: info@octopus.com", phone: "Phone: +88 (0) 101 0000 000"})
+					+contact(_dataContact)
 		form(class="main"+"_from") 
 			div(class="main"+"_btstrp-container" class="container")
 				div(class="main"+"_btstrp-row" class="row")
